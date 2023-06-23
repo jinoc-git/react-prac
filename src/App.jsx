@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css'
 import ButtonSection from "./sections/ButtonSection";
 import InputSection from "./sections/InputSection";
 import ModalSection from "./sections/ModalSection";

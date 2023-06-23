@@ -8,24 +8,24 @@ function ButtonSection() {
     <Wrapper>
       <h1>Button</h1>
       <StBtnWrapper>
-        <Button size={"L"} $bc={"yellowgreen"} $shadow={true}>
+        <Button size={"L"} $bc="yellowgreen" $shadow={true}>
           Large
         </Button>
-        <Button size={"M"} $bc={"yellowgreen"}>
+        <Button size={"M"} $bc="yellowgreen">
           Medium
         </Button>
-        <Button size={"S"} $bc={"yellowgreen"}>
+        <Button size={"S"} $bc="yellowgreen">
           Small
         </Button>
       </StBtnWrapper>
       <StBtnWrapper>
-        <Button size={"L"} $border={"#dcdcdc"} color={"#707070"}>
+        <Button size={"L"} $border="#dcdcdc" color="#707070">
           Large
         </Button>
-        <Button size={"M"} $border={"#dcdcdc"} color={"#707070"} $shadow={true}>
+        <Button size={"M"} $border="#dcdcdc" color="#707070" $shadow={true}>
           Medium
         </Button>
-        <Button size={"S"} $border={"#dcdcdc"} color={"#707070"}>
+        <Button size={"S"} $border="#dcdcdc" color="#707070">
           Small
         </Button>
       </StBtnWrapper>

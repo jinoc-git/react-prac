@@ -8,6 +8,7 @@ function Wrapper({ children }) {
 export default Wrapper;
 
 const StWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
