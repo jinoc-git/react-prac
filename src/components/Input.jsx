@@ -1,16 +1,19 @@
 import React from "react";
-import { useState } from "react";
 import { styled, css } from "styled-components";
 
-function Input({ type, title }) {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
+function Input({ type, title, ...props }) {
+  const { name, setName } = props;
+  const { price, setPrice } = props;
+  const addCommaPrice = (value) => {
+    const remove = Number(value.replace(/[^0-9]/g, ""));
+    setPrice(remove.toLocaleString());
+  };
   return (
     <StInput
       type={type}
       value={title === "name" ? name : price}
       onChange={({ target }) => {
-        title === "name" ? setName(target.value) : setPrice(target.value);
+        title === "name" ? setName(target.value) : addCommaPrice(target.value);
       }}
     />
   );
