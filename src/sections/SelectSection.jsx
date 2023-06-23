@@ -21,7 +21,10 @@ function SelectSection() {
       <div>
         <StSelect
           onClick={isOpenHandler}
-          onBlur={() => setIsopen((prev) => !prev)}>
+          onBlur={() => {
+            setIsopen(false)
+            }}
+            >
           <StInnerBtnWrapper>
             {option}
             <span>▼</span>
