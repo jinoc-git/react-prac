@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { styled, css } from "styled-components";
 import { createPortal } from "react-dom";
 import uuid from "react-uuid";
 
-function Option({ list, selectOption }) {
-  console.log(selectOption)
+function Option({ list, selectOption, setIsopen }) {
   return createPortal(
     <StUl>
       {list.map((item, idx) => {
         return (
           <StLi
             key={uuid()}
-            onMouseDown={() => {
+            onMouseDown={(e) => {
+              e.preventDefault();
+            }}
+            onClick={() => {
               selectOption(idx);
+              setIsopen(false);
             }}>
             {item}
           </StLi>
