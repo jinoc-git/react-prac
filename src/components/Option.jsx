@@ -11,8 +11,7 @@ function Option({ list, selectOption }) {
         return (
           <StLi
             key={uuid()}
-            onClick={() => {
-              console.log("d");
+            onMouseDown={() => {
               selectOption(idx);
             }}>
             {item}
@@ -29,7 +28,7 @@ export default Option;
 const StUl = styled.ul`
   position: absolute;
   left: 20px;
-  top: 617px;
+  top: 618px;
   padding: 0;
   border: 0.5px solid #dcdcdc;
   border-radius: 8px;
