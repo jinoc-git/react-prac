@@ -1,8 +1,8 @@
 import React from "react";
 import { styled, css } from "styled-components";
 
-function Button({ children, ...props }) {
-  return <StButton {...props}>{children}</StButton>;
+function Button({ children, fnc, ...props }) {
+  return <StButton {...props} onClick={fnc}>{children}</StButton>;
 }
 
 export default Button;
