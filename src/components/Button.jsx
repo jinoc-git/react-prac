@@ -2,7 +2,11 @@ import React from "react";
 import { styled, css } from "styled-components";
 
 function Button({ children, fnc, ...props }) {
-  return <StButton {...props} onClick={fnc}>{children}</StButton>;
+  return (
+    <StButton {...props} onClick={fnc}>
+      {children}
+    </StButton>
+  );
 }
 
 export default Button;
@@ -12,10 +16,22 @@ const StButton = styled.button`
   border: none;
   border-radius: 12px;
   color: ${({ color }) => color};
-  background-color: ${({ $bc }) => ($bc ? $bc : "transparent")};
+
   &:hover {
     filter: brightness(0.8);
   }
+
+  ${({ $bc }) => {
+    if ($bc !== undefined) {
+      return css`
+        background-color: ${$bc};
+      `;
+    } else {
+      return css`
+        background-color: transparent;
+      `;
+    }
+  }};
 
   ${({ size }) => {
     switch (size) {
