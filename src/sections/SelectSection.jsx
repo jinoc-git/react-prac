@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Wrapper from "../components/Wrapper";
 import Option from "../components/Option";
 import { styled } from "styled-components";
-import uuid from "react-uuid";
 
 function SelectSection() {
   const values = ["리액트", "자바", "스프링", "리액트네이티브"];
@@ -12,7 +11,6 @@ function SelectSection() {
     setIsopen((prev) => !prev);
   };
   const selectOption = (idx) => {
-    console.log(idx);
     setOption(values[idx]);
   };
   return (
@@ -22,15 +20,20 @@ function SelectSection() {
         <StSelect
           onClick={isOpenHandler}
           onBlur={() => {
-            setIsopen(false)
-            }}
-            >
+            setIsopen(false);
+          }}>
           <StInnerBtnWrapper>
             {option}
             <span>▼</span>
           </StInnerBtnWrapper>
         </StSelect>
-        {isOpen && <Option list={values} selectOption={selectOption} />}
+        {isOpen && (
+          <Option
+            list={values}
+            selectOption={selectOption}
+            setIsopen={setIsopen}
+          />
+        )}
       </div>
     </Wrapper>
   );
